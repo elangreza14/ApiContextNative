@@ -21,7 +21,7 @@ const App = () => {
     <>
       <View>
         <Text>
-          test
+          testdua
       </Text>
       </View>
     </>
