@@ -1,12 +1,22 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { createContext, useReducer } from 'react'
+import { ApiReducers } from '../reducers/ApiReducers';
 
-const ApiContext = () => {
+export const ApiContext = createContext()
+
+const ApiContextProvider = props => {
+    const initialState = {
+        response: '',
+        baseapilink: '1',
+    }
+
+    const [ApiAll, dispatch] = useReducer(ApiReducers, initialState);
+
+
     return (
-        <View>
-            <Text>ewewe</Text>
-        </View>
-    )
+        <ApiContext.Provider value={{ ApiAll, dispatch }}>
+            {props.children}
+        </ApiContext.Provider>
+    );
 }
 
-export default ApiContext
+export default ApiContextProvider

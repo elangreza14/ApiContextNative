@@ -1,30 +1,15 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import ApiContextProvider from './src/contexts/ApiContext';
+import MainScreen from './src/Screens/MainScreen';
+
+
 
 const App = () => {
   return (
-    <>
-      <View>
-        <Text>
-          testdua
-      </Text>
-      </View>
-    </>
+    <ApiContextProvider>
+      <MainScreen />
+    </ApiContextProvider>
+
   );
 };
 

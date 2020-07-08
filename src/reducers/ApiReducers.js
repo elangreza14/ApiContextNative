@@ -1,12 +1,31 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-
-const ApiReducers = () => {
-    return (
-        <View>
-            <Text>qwqw</Text>
-        </View>
-    )
+const example = {
+    response: '',
+    baseapilink: '',
 }
 
-export default ApiReducers
+export const ApiReducers = (state, action) => {
+    switch (action.type) {
+        case 'REQUEST1':
+            return {
+                ...state,
+                baseapilink: '2',
+            };
+        case 'REQUEST2':
+            return {
+                ...state,
+                baseapilink: '3',
+            };
+        case 'RESPONSE':
+            return {
+                ...state,
+                response: action.url
+            };
+        case 'RESET':
+            return {
+                response: '',
+                baseapilink: '1',
+            };
+        default:
+            return state;
+    }
+};
